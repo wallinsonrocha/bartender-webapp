@@ -1,0 +1,21 @@
+.bartender-container{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    max-width: 320px;
+    position: relative;
+    color: var(--text-col-2);
+
+    button{
+        max-width: 176px;
+        padding: .4rem;
+        border: 0;
+        border-radius: 20px;
+    }
+}
+
+.bartender-star-price{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

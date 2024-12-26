@@ -1,0 +1,18 @@
+#area-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: top;
+    gap: 2rem;
+    background: #252525;
+
+    padding: 4rem 5%;
+
+    img {
+        border-radius: 1rem;
+    }
+}
+
+/* DESKTOP BREAKPOINT */
+
+@media (min-width: 1024px) {}

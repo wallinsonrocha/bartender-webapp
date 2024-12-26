@@ -1,0 +1,33 @@
+#home{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    align-items: center;
+    min-height: 100vh;
+
+    a{
+        background-color: #c4c4c4;
+        border-radius: 20px;
+        padding: .6rem;
+    }
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 20px;
+}
+
+.home-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+.home-links a{
+    width: 100%;
+}
+
+
