@@ -13,8 +13,8 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur. Massa in nisi amet sem suspendisse. Tincidunt eget interdum et dui at duis. Risus sed imperdiet ac porttitor arcu mauris neque scelerisque purus. Placerat netus risus sed nisi etiam.
             </p>
             <div className="home-links">
-              <a href="">Produtos</a>
-              <a href="">Bartenders</a>
+              <a href="/drinks">Produtos</a>
+              <a href="/bartenders">Bartenders</a>
             </div>
           </div>
 

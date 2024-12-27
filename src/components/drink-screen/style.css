@@ -5,7 +5,37 @@
     place-items: center;
     inset: 0;
     background-color: rgba(0, 0, 0, .4);
-    backdrop-filter: blur(4px);    
+    backdrop-filter: blur(4px);
+}
+
+.drink-product__qnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-size: 20px;
+
+    margin: 2rem 0;
+
+    .qnt__button {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        padding: .4rem .2rem;
+        border-radius: 2rem;
+
+        width: 100%;
+        max-width: 140px;
+        border: 1px solid #000;
+        height: fit-content;
+        /* justify-content: center; */
+    }
+}
+
+.drink-product__value{
+    display: flex;
+    justify-content: space-between;
 }
 
 #drink-product-detail {
@@ -18,16 +48,28 @@
     overflow-y: scroll;
     width: 90%;
 
-    button {
-        align-self: flex-end;
-        margin-bottom: 2rem;
+    .drink-product__image-container{
+        width: 100%;        
+    }
+
+    .drink-product__close{
+        max-width: 100px;
+        width: 100%;
+        align-self: self-end;
+        font-size: 1rem;
+        padding: .4rem .6rem;
+        margin: 1rem 0;
+
+        border: none;
+        border-radius: 2rem;
+
     }
 
     img {
-        width: 100%;
+        border-radius: 1rem;
     }
 
-    a{
+    a {
         max-width: 320px;
     }
 
@@ -45,6 +87,10 @@
         .drink-product-container {
             max-width: fit-content;
             color: var(--text-col-1);
+
+            button {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -61,19 +107,23 @@
 
 @media (min-width: 1024px) {
     #drink-product-detail {
-        
+
         .drink-product-detail__container {
             flex-direction: row;
             justify-content: space-around;
-            gap: 1rem;
+            gap: 1rem;            
 
             .drink-product-detail__content {
                 max-width: 45%;
             }
 
             .drink-product-container {
-                max-width: 45%;
+                max-width: 35%;
             }
+        }
+
+        .drink-product__image-container{
+            width: 50%;        
         }
     }
 
