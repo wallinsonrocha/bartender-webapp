@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Star from '../star';
 import './style.css';
 import { useState } from 'react';
+import useStore from '@/app/store/cartStore';
+
+const addCart = useStore((state) => state.addProduct)
 
 type DrinkDetailProps = {
   id: number;
@@ -24,12 +27,12 @@ export default function DrinkDetail(props: DrinkDetailProps) {
 
   // Função para adicionar
   const handleAdd = () => {
-    setQuantitie((prev) => prev+1);
+    setQuantitie((prev) => prev + 1);
   }
 
   // Função para subtrair
   const handleSub = () => {
-    setQuantitie((prev) => (prev > 1 ? prev-1 : 1))
+    setQuantitie((prev) => (prev > 1 ? prev - 1 : 1))
   }
 
   return (
@@ -49,7 +52,7 @@ export default function DrinkDetail(props: DrinkDetailProps) {
             <div className="drink-product-star-price">
               <div style={{ display: 'flex' }}>
                 {stars.map((_, index) => (
-                  <Star index={index} />
+                  <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
                 ))}
               </div>
               <p>Preço: R$ {props.valorH.toFixed(2).replace(".", ",")}</p>
@@ -61,7 +64,7 @@ export default function DrinkDetail(props: DrinkDetailProps) {
             </div>
             {/* Preço e quantidade */}
             <div className="drink-product__qnt">
-              <p className='qnt__price'>R$ {(props.valorH*quantitie).toFixed(2).replace(".", ",")}</p>
+              <p className='qnt__price'>R$ {(props.valorH * quantitie).toFixed(2).replace(".", ",")}</p>
               <div className='qnt__button'>
                 <button onClick={handleSub}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 12.998H5v-2h14z" /></svg>
@@ -73,7 +76,12 @@ export default function DrinkDetail(props: DrinkDetailProps) {
               </div>
             </div>
 
-            <button>Adicionar no carrinho</button>
+            <button
+            // Continuar aqui para verificar a reorganização da quantidade de produtos e o seu armazenamento (produto e qnt)
+              onClick={addCart()}
+            >
+              Adicionar no carrinho
+            </button>
           </div>
         </div>
       </div>

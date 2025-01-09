@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Star from "../star";
 import "./style.css"
 import Image from "next/image";
@@ -8,7 +9,6 @@ type propsType = {
   valorH: number;
   stars: number;
   shortDesc: string;
-  onButtonClick: (id: number) => void;
 }
 
 export default function Bartender(props: propsType) {
@@ -23,13 +23,13 @@ export default function Bartender(props: propsType) {
       <div className="bartender-star-price">
         <div className="bartanter-stars">
           {stars.map((_, index) => (
-            <Star index={index} />
+            <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
           ))}
         </div>
         <p>Valor hora: R$ {props.valorH}</p>
       </div>
       <p>{props.shortDesc}</p>
-      <button onClick={() => props.onButtonClick(props.id)}>Ver mais</button>
+      <Link href={`../bartenders/${props.id}`}>Ver mais</Link>
     </div>
   );
 }

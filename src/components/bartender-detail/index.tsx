@@ -1,6 +1,8 @@
+'use client'
 import Image from 'next/image';
 import Star from '../star';
 import './style.css';
+import { useRouter } from 'next/navigation';
 
 type BartenderDetailProps = {
   id: number;
@@ -11,20 +13,21 @@ type BartenderDetailProps = {
   description: string;
   objective: string;
   challenges: string;
-  onClose: () => void;
 }
 
 export default function BartenderDetail(props: BartenderDetailProps) {
   // Cria um array com o número de estrelas definido pela prop "stars"
-  const stars = Array.from({ length: props.stars });
+  const stars = Array.from({ length: props.stars });  
+
+  const router = useRouter();
 
   return (
     <div key={props.id} id="bartender-screen">
       <div id="bartender-detail" className='bartenderActive'>
-        <button onClick={props.onClose}>Cancel</button>
+        <button className='back-button' onClick={()=>router.back()} >Voltar</button>
         <div className='bartender-detail__container'>
           <div className='bartender-detail__content'>
-            <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={0} height={0} layout='responsive' style={{objectFit: "cover"}} />
+            <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={0} height={0} layout='responsive' style={{ objectFit: "cover" }} />
             <div>
               <h3>Objetivo</h3>
               <p>
@@ -44,7 +47,7 @@ export default function BartenderDetail(props: BartenderDetailProps) {
             <div className="bartender-star-price">
               <div className="bartanter-stars">
                 {stars.map((_, index) => (
-                  <Star index={index} />
+                  <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
                 ))}
               </div>
               <p>Valor hora: R$ {props.valorH}</p>
@@ -60,6 +63,8 @@ export default function BartenderDetail(props: BartenderDetailProps) {
         </div>
       </div>
     </div>
-
   );
 }
+
+
+

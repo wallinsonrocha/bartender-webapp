@@ -22,7 +22,7 @@ export default function Drink(props: propsType) {
       <div className="drink-product-star-price">
         <div className="drink-product-stars">
           {stars.map((_, index) => (
-            <Star index={index} />
+            <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
           ))}
         </div>
         <p>Preço: R$ {props.valorH.toFixed(2).replace( ".", ",")}</p>

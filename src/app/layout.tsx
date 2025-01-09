@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import "./global.css";
 import "./style.css";
 
@@ -8,12 +9,20 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  modal: React.ReactNode,
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>
+          {modal}
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

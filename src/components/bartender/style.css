@@ -6,7 +6,9 @@
     position: relative;
     color: var(--text-col-2);
 
-    button{
+    a{
+        background-color: aliceblue;
+        text-align: center;
         max-width: 176px;
         padding: .4rem;
         border: 0;

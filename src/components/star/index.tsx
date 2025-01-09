@@ -1,11 +1,10 @@
 type propsType = {
-    index: number;
+    index: String;
 }
 
 export default function Star(props: propsType) {
     return (
         <svg
-            key={props.index}
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
             height="1em"
