@@ -1,4 +1,3 @@
-import '.././style.css';
 import BartenderDetail from "@/components/bartender-detail";
 import { bartenderList, BartenderPerson } from '../../../../public/data/bartenders';
 

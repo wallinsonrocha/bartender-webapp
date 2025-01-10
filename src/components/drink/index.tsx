@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Star from "../star";
 import "./style.css"
 
@@ -7,7 +8,7 @@ type propsType = {
   valorH: number;
   stars: number;
   shortDesc: string;
-  onButtonClick: (id: number) => void;
+
 }
 
 export default function Drink(props: propsType) {
@@ -28,7 +29,7 @@ export default function Drink(props: propsType) {
         <p>Preço: R$ {props.valorH.toFixed(2).replace( ".", ",")}</p>
       </div>
       <p>{props.shortDesc}</p>
-      <button onClick={() => props.onButtonClick(props.id)}>Ver mais</button>
+      <Link href={`../drinks/${props.id}`}>Ver mais</Link>
     </div>
   );
 }

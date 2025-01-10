@@ -4,8 +4,7 @@ import Star from '../star';
 import './style.css';
 import { useState } from 'react';
 import useStore from '@/app/store/cartStore';
-
-const addCart = useStore((state) => state.addProduct)
+import { useRouter } from 'next/navigation';
 
 type DrinkDetailProps = {
   id: number;
@@ -16,10 +15,12 @@ type DrinkDetailProps = {
   description: string;
   objective: string;
   challenges: string;
-  onClose: () => void;
 }
 
 export default function DrinkDetail(props: DrinkDetailProps) {
+  const addCart = useStore((state) => state.addProduct)
+  const router = useRouter();
+
   // Cria um array com o número de estrelas definido pela prop "stars"
   const stars = Array.from({ length: props.stars });
 
@@ -40,7 +41,7 @@ export default function DrinkDetail(props: DrinkDetailProps) {
       {/* Tela com insformações principais */}
       <div id="drink-product-detail" className='drinkActive'>
         {/* Container */}
-        <button className='drink-product__close' onClick={props.onClose}>Fechar</button>
+        <button className='back-button' onClick={()=>router.back()} >Fechar</button>
         {/* Container de informações */}
         <div className='drink-product-detail__container'>
           <div className='drink-product__image-container'>
@@ -77,8 +78,8 @@ export default function DrinkDetail(props: DrinkDetailProps) {
             </div>
 
             <button
-            // Continuar aqui para verificar a reorganização da quantidade de produtos e o seu armazenamento (produto e qnt)
-              onClick={addCart()}
+              // Continuar aqui para verificar a reorganização da quantidade de produtos e o seu armazenamento (produto e qnt)
+              // onClick={addCart()}
             >
               Adicionar no carrinho
             </button>

@@ -1,0 +1,15 @@
+#drink-product-screen {
+    position: fixed;    
+    z-index: 3;
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(4px);
+}
+
+.qnt__button {
+    justify-content: center;
+}
+
+#drink-product-detail {
+    height: 90%;
+    /* overflow-y: scroll; */    
+}
