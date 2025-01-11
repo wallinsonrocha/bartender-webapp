@@ -51,7 +51,7 @@ export default function DrinkDetail(props: DrinkDetailProps) {
           <div className="drink-product-container">
             <h3>{props.name}</h3>
             <div className="drink-product-star-price">
-              <div style={{ display: 'flex' }}>
+              <div className='flex'>
                 {stars.map((_, index) => (
                   <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
                 ))}

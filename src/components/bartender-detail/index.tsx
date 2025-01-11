@@ -45,7 +45,7 @@ export default function BartenderDetail(props: BartenderDetailProps) {
           <div className="bartender-container">
             <h3>{props.name}</h3>
             <div className="bartender-star-price">
-              <div className="bartanter-stars">
+              <div className="bartanter-stars flex">
                 {stars.map((_, index) => (
                   <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
                 ))}

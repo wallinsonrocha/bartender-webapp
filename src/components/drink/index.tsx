@@ -21,7 +21,7 @@ export default function Drink(props: propsType) {
       <img src='/images/image.jpg' alt="" />
       <h3>{props.name}</h3>
       <div className="drink-product-star-price">
-        <div className="drink-product-stars">
+        <div className="drink-product-stars flex">
           {stars.map((_, index) => (
             <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
           ))}

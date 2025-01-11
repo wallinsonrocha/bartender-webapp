@@ -21,7 +21,7 @@ export default function Bartender(props: propsType) {
       <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={320} height={320} />
       <h3>{props.name}</h3>
       <div className="bartender-star-price">
-        <div className="bartanter-stars">
+        <div className="bartanter-stars flex">
           {stars.map((_, index) => (
             <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
           ))}
