@@ -12,9 +12,7 @@ type DrinkDetailProps = {
   valorH: number;
   stars: number;
   shortDesc: string;
-  description: string;
-  objective: string;
-  challenges: string;
+  description: string;  
 }
 
 export default function DrinkDetail(props: DrinkDetailProps) {
@@ -67,11 +65,11 @@ export default function DrinkDetail(props: DrinkDetailProps) {
             <div className="drink-product__qnt">
               <p className='qnt__price'>R$ {(props.valorH * quantitie).toFixed(2).replace(".", ",")}</p>
               <div className='qnt__button'>
-                <button onClick={handleSub}>
+                <button aria-label='sub' onClick={handleSub}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 12.998H5v-2h14z" /></svg>
                 </button>
-                <p>{quantitie}</p>
-                <button onClick={handleAdd}>
+                <p aria-label='quantitie'>{quantitie}</p>
+                <button aria-label='add' onClick={handleAdd}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="1.6em" height="1.6em" viewBox="0 0 24 24"><path fill="currentColor" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2" /></svg>
                 </button>
               </div>
