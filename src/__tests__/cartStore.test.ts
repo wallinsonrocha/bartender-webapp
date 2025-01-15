@@ -21,7 +21,7 @@ describe('Test Add CartStore from my zustand store', () => {
         store.cart = { products: [] };
     });
 
-    test('shold add product to the cart', () => {
+    test('should add product to the cart', () => {
         const addProduct = useStore.getState().addProduct;
         addProduct(product, 2);
         const state = useStore.getState().cart;
@@ -88,12 +88,13 @@ describe('Test Add CartStore from my zustand store', () => {
     })
 })
 
-describe.only('Test Sub CartStore from my zustand store', () => {
-    afterEach(() => {
+describe('Test Sub CartStore from my zustand store', () => {
+    beforeEach(() => {
         const store = useStore.getState();
         store.cart = {
             products: [
                 {
+                    id: "1",
                     product: {
                         id: 1,
                         name: "Drink A",
@@ -105,6 +106,7 @@ describe.only('Test Sub CartStore from my zustand store', () => {
                     qnt: 2,
                 },
                 {
+                    id: "2",
                     product: {
                         id: 2,
                         name: "Drink B",
@@ -116,6 +118,7 @@ describe.only('Test Sub CartStore from my zustand store', () => {
                     qnt: 1,
                 },
                 {
+                    id: "3",
                     product: {
                         id: 3,
                         name: "Drink C",
@@ -127,6 +130,7 @@ describe.only('Test Sub CartStore from my zustand store', () => {
                     qnt: 4,
                 },
                 {
+                    id: "4",
                     product: {
                         id: 4,
                         name: "Drink D",
@@ -138,6 +142,7 @@ describe.only('Test Sub CartStore from my zustand store', () => {
                     qnt: 3,
                 },
                 {
+                    id: "5",
                     product: {
                         id: 5,
                         name: "Drink E",
@@ -152,10 +157,41 @@ describe.only('Test Sub CartStore from my zustand store', () => {
         };
     });
 
-    test('shold add product to the cart', () => {
-        const addProduct = useStore.getState().addProduct;
-        addProduct(product, 2);
+    test('should remove product in the cart', () => {
+        const deleteProduct = useStore.getState().removeProduct;
+        deleteProduct("1");
         const state = useStore.getState().cart;
-        expect(state.products).toHaveLength(1);
+        expect(state.products).toHaveLength(4);        
+        const existingProductIndex = state.products.findIndex((p) => p.id === "1");
+        expect(state.products).toHaveLength(4);        
+        expect(existingProductIndex).toBe(-1);
     });
+
+    test('should return state if id dont exist', () => {
+        const deleteProduct = useStore.getState().removeProduct;
+        deleteProduct("a");
+        const state = useStore.getState().cart;
+        expect(state.products).toHaveLength(5);                
+    });
+
+    test('should modify quantitie from a product', () => {
+        const mod = useStore.getState().modQnt;        
+        mod("1", 5);
+        const state = useStore.getState().cart;
+        const existingProductIndex = state.products.find((p) => p.id === "1");
+        expect(existingProductIndex?.qnt).toBe(5);
+    });
+
+    test('should return nothing if wrong id', () => {
+        const mod = useStore.getState().modQnt;        
+        mod("b", 5);
+        const state = useStore.getState().cart;
+        const existingProductIndex = state.products.find((p) => p.id === "b");
+        expect(existingProductIndex?.qnt).toBe(undefined);
+    });
+
+    test('should return total value', ()=>{
+        const totalValue = useStore.getState().getTotal();
+        expect(totalValue).toBe(209);
+    })
 })

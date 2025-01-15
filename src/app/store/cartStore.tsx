@@ -1,8 +1,10 @@
+import { v4 as uuidv4 } from 'uuid';
 import { create } from 'zustand';
 import { DrinkProduct } from '../../../public/data/drinks';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 
 interface DrinkQnt {
+  id: string;
   product: DrinkProduct;
   qnt: number;
 }
@@ -14,17 +16,20 @@ interface Cart {
 interface StoreState {
   cart: Cart;
   addProduct: (product: DrinkProduct, qnt: number) => void;
-  removeProduct: (id: number, qntToRemove?: number) => void;
+  removeProduct: (id: string) => void;
+  modQnt: (id: string, qnt: number) => void;
+  getTotal: () => number;
 }
 
-// Continuar a construção de uma função para conseguir minimizar o código.
-function OperationCart<DrinkQnt>(operation: ()=>number) {
-  
+function foundId(array: DrinkQnt[], id: string): { updatedProducts: DrinkQnt[]; existingProductIndex: number } {
+  const existingProductIndex = array.findIndex((p) => p.id === id);
+  const updatedProducts = [...array];
+  return { updatedProducts, existingProductIndex };
 }
 
 const useStore = create<StoreState>()(
   persist(
-    set => ({
+    (set, get) => ({
       cart: {
         products: [],
       },
@@ -43,7 +48,8 @@ const useStore = create<StoreState>()(
             };
             // console.log(updatedProducts[existingProductIndex])
           } else {
-            updatedProducts.push({ product: product, qnt });
+            let newId = uuidv4();
+            updatedProducts.push({ id: newId, product: product, qnt });
           }
 
           return {
@@ -52,24 +58,32 @@ const useStore = create<StoreState>()(
             },
           };
         }),
-      removeProduct: (id, qntToRemove) =>
+      removeProduct: (id) =>
         set((state) => {
-          const existingProductIndex = state.cart.products.findIndex((p) => p.id === id);
+          const { updatedProducts, existingProductIndex } = foundId(state.cart.products, id);
+
+          // Remove
+          if (existingProductIndex > -1) {
+            updatedProducts.splice(existingProductIndex, 1);
+          }
+
+          else {
+            return state;
+          }
+
+          return {
+            cart: {
+              ...state.cart,
+              products: updatedProducts,
+            },
+          };
+        }),
+      modQnt: (id, qnt) =>
+        set((state) => {
+          const { updatedProducts, existingProductIndex } = foundId(state.cart.products, id);
 
           if (existingProductIndex > -1) {
-            const updatedProducts = [...state.cart.products];
-            const product = updatedProducts[existingProductIndex];
-
-            if (qntToRemove && product.qnt > qntToRemove) {
-              // Reduzir a quantidade se ainda houver o suficiente
-              updatedProducts[existingProductIndex] = {
-                ...product,
-                qnt: product.qnt - qntToRemove,
-              };
-            } else {
-              // Remover completamente se a quantidade é zero ou inferior
-              updatedProducts.splice(existingProductIndex, 1);
-            }
+            updatedProducts[existingProductIndex].qnt = qnt
 
             return {
               cart: {
@@ -78,8 +92,17 @@ const useStore = create<StoreState>()(
               },
             };
           }
-          return state; // Retornar o estado inalterado se o produto não existir
+
+          return state;
         }),
+        getTotal: () => {
+          const products = get().cart.products;
+          let totalValue = products.reduce(
+            (total, item) => total + item.product.valorH * item.qnt,
+            0
+          );         
+          return totalValue;
+        },
     }), { name: 'cart-storage' }
   )
 
