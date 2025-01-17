@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Star from "../star";
+import Star from "../../star";
 import "./style.css"
+import Image from "next/image";
 
 type propsType = {
   id: number;
@@ -8,28 +9,27 @@ type propsType = {
   valorH: number;
   stars: number;
   shortDesc: string;
-
 }
 
-export default function Drink(props: propsType) {
+export default function Bartender(props: propsType) {
 
   // Cria um array com o número de estrelas definido pela prop "stars"
   const stars = Array.from({ length: props.stars });
 
   return (
-    <div key={props.id} className="drink-product-container">
-      <img src='/images/image.jpg' alt="" />
+    <div key={props.id} className="bartender-container">
+      <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={320} height={320} />
       <h3>{props.name}</h3>
-      <div className="drink-product-star-price">
-        <div className="drink-product-stars flex">
+      <div className="bartender-star-price">
+        <div className="bartanter-stars flex">
           {stars.map((_, index) => (
             <Star key={`${props.name}-${index}`} index={`${props.name}-${index}`} />
           ))}
         </div>
-        <p>Preço: R$ {props.valorH.toFixed(2).replace( ".", ",")}</p>
+        <p>Valor hora: R$ {props.valorH}</p>
       </div>
       <p>{props.shortDesc}</p>
-      <Link href={`../drinks/${props.id}`}>Ver mais</Link>
+      <Link href={`../bartenders/${props.id}`}>Ver mais</Link>
     </div>
   );
 }

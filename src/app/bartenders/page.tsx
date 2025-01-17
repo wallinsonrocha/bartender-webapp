@@ -1,5 +1,5 @@
 import './style.css';
-import Bartender from "@/components/bartender";
+import Bartender from "@/components/bartender/bartender-display";
 import { bartenderList } from '../../../public/data/bartenders';
 
 const handleButtonClick = (id: number) => console.log("Navegar até a página")

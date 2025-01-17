@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import Star from '../star';
+import Star from '../../star';
 import './style.css';
 import { useRouter } from 'next/navigation';
 

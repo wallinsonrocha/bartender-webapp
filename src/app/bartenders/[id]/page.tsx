@@ -1,4 +1,4 @@
-import BartenderDetail from "@/components/bartender-detail";
+import BartenderDetail from "@/components/bartender/bartender-detail";
 import { bartenderList, BartenderPerson } from '../../../../public/data/bartenders';
 
 interface InfoParams {

@@ -1,7 +1,7 @@
 
 import { bartenderList, BartenderPerson } from '../../../../../public/data/bartenders';
 import './style.css';
-import BartenderDetail from "@/components/bartender-detail";
+import BartenderDetail from "@/components/bartender/bartender-detail";
 
 interface InfoParams {
   params: {

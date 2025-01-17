@@ -1,21 +1,13 @@
 "use client"
 import Image from 'next/image';
-import Star from '../star';
+import Star from '../../star';
 import './style.css';
 import { useState } from 'react';
 import useStore from '@/app/store/cartStore';
 import { useRouter } from 'next/navigation';
+import { DrinkProduct } from '../../../../public/data/drinks';
 
-type DrinkDetailProps = {
-  id: number;
-  name: string;
-  valorH: number;
-  stars: number;
-  shortDesc: string;
-  description: string;  
-}
-
-export default function DrinkDetail(props: DrinkDetailProps) {
+export default function DrinkDetail(props: DrinkProduct) {
   const addCart = useStore((state) => state.addProduct)
   const router = useRouter();
 
@@ -32,6 +24,11 @@ export default function DrinkDetail(props: DrinkDetailProps) {
   // Função para subtrair
   const handleSub = () => {
     setQuantitie((prev) => (prev > 1 ? prev - 1 : 1))
+  }
+
+  const handleAddProduct = (quantitie: number) => {
+    addCart({...props}, quantitie);
+    setQuantitie(1);
   }
 
   return (
@@ -77,7 +74,7 @@ export default function DrinkDetail(props: DrinkDetailProps) {
 
             <button
               // Continuar aqui para verificar a reorganização da quantidade de produtos e o seu armazenamento (produto e qnt)
-              // onClick={addCart()}
+              onClick={()=>handleAddProduct(quantitie)}
             >
               Adicionar no carrinho
             </button>

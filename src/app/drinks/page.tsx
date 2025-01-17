@@ -1,6 +1,6 @@
 import './style.css';
 import { productList } from '../../../public/data/drinks';
-import Drink from '@/components/drink';
+import Drink from '@/components/drink/drink-display';
 
 export default function DrinkPage() {
   return (

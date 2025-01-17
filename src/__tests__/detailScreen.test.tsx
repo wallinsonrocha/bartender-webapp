@@ -1,4 +1,4 @@
-import DrinkDetail from '@/components/drink-screen';
+import DrinkDetail from '@/components/drink/drink-screen';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 const props = {

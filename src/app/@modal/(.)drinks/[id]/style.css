@@ -1,6 +1,6 @@
 #drink-product-screen {
     position: fixed;    
-    z-index: 3;
+    z-index: 20;
     background-color: rgba(0, 0, 0, .4);
     backdrop-filter: blur(4px);
 }

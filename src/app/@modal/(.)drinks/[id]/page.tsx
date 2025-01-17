@@ -1,5 +1,5 @@
 import './style.css';
-import DrinkDetail from '@/components/drink-screen';
+import DrinkDetail from '@/components/drink/drink-screen';
 import { DrinkProduct, productList } from '../../../../../public/data/drinks';
 
 interface InfoParams {
@@ -28,9 +28,7 @@ export default function BartenderPage({ params }: InfoParams) {
       name={drink.name}
       valorH={drink.valorH}
       stars={drink.stars}
-      shortDesc={drink.shortDesc}
-      objective={drink.objective}
-      challenges={drink.challenges}
+      shortDesc={drink.shortDesc}      
       description={drink.description} />
   );
 }

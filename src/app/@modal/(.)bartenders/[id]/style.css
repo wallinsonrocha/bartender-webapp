@@ -1,6 +1,6 @@
 #bartender-screen {
     position: fixed;
-    z-index: 3;
+    z-index: 20;
     width: 100%;
     display: grid;
     place-items: center;
