@@ -26,9 +26,10 @@ export default function DrinkDetail(props: DrinkProduct) {
     setQuantitie((prev) => (prev > 1 ? prev - 1 : 1))
   }
 
-  const handleAddProduct = (quantitie: number) => {
+  const handleAddProduct = (quantitie: number) => {    
     addCart({...props}, quantitie);
     setQuantitie(1);
+    router.back();
   }
 
   return (

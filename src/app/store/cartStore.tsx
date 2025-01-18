@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import { DrinkProduct } from '../../../public/data/drinks';
 import { persist } from 'zustand/middleware';
 
-interface DrinkQnt {
+export interface DrinkQnt {
   id: string;
   product: DrinkProduct;
   qnt: number;
