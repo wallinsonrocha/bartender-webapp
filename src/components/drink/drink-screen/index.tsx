@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Star from '../../star';
 import './style.css';
 import { useState } from 'react';
-import useStore from '@/app/store/cartStore';
+import useStore from '@/store/cartStore';
 import { useRouter } from 'next/navigation';
 import { DrinkProduct } from '../../../../public/data/drinks';
 
@@ -41,7 +41,7 @@ export default function DrinkDetail(props: DrinkProduct) {
         {/* Container de informações */}
         <div className='drink-product-detail__container'>
           <div className='drink-product__image-container'>
-            <Image src="https://picsum.photos/id/10/300/200" alt="Image Drink" width={0} height={0} layout='responsive' style={{ objectFit: "cover" }} />
+            <Image src={props.image} alt="Image Drink" width={0} height={0} layout='responsive' style={{ objectFit: "cover" }} />
           </div>
           {/* Informações do produto */}
           <div className="drink-product-container">

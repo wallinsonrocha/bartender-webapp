@@ -8,6 +8,7 @@ type BartenderDetailProps = {
   id: number;
   name: string;
   valorH: number;
+  image: string;
   stars: number;
   shortDesc: string;
   description: string;
@@ -27,7 +28,7 @@ export default function BartenderDetail(props: BartenderDetailProps) {
         <button className='back-button' onClick={()=>router.back()} >Voltar</button>
         <div className='bartender-detail__container'>
           <div className='bartender-detail__content'>
-            <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={0} height={0} layout='responsive' style={{ objectFit: "cover" }} />
+            <Image src={props.image} alt="Image Bartender" width={0} height={0} layout='responsive' style={{ objectFit: "cover" }} />
             <div>
               <h3>Objetivo</h3>
               <p>

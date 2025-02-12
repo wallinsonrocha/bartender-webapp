@@ -6,6 +6,7 @@ type propsType = {
   id: number;
   name: string;
   valorH: number;
+  image: string;
   stars: number;
   shortDesc: string;
 
@@ -18,7 +19,7 @@ export default function Drink(props: propsType) {
 
   return (
     <div key={props.id} className="drink-product-container">
-      <img src='/images/image.jpg' alt="" />
+      <img src={props.image} alt="Bebida" />
       <h3>{props.name}</h3>
       <div className="drink-product-star-price">
         <div className="drink-product-stars flex">

@@ -14,6 +14,7 @@ export default function DrinkPage() {
                 name={p.name}
                 stars={p.stars}
                 valorH={p.valorH}
+                image={p.image}
                 shortDesc={p.shortDesc}
               />
             )

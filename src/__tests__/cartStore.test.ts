@@ -1,4 +1,4 @@
-import useStore from "@/app/store/cartStore";
+import useStore from "@/store/cartStore";
 import { DrinkProduct } from "../../public/data/drinks";
 
 

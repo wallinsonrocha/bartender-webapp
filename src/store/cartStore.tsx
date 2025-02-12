@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { create } from 'zustand';
-import { DrinkProduct } from '../../../public/data/drinks';
+import { DrinkProduct } from '../../public/data/drinks';
 import { persist } from 'zustand/middleware';
 
 export interface DrinkQnt {

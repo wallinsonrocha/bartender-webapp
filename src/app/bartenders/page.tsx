@@ -2,8 +2,6 @@ import './style.css';
 import Bartender from "@/components/bartender/bartender-display";
 import { bartenderList } from '../../../public/data/bartenders';
 
-const handleButtonClick = (id: number) => console.log("Navegar até a página")
-
 export default function BartenderPage() {
   return (
     <>
@@ -14,10 +12,10 @@ export default function BartenderPage() {
               <Bartender id={b.id}
                 key={b.id}
                 name={b.name}
+                image={b.image}
                 stars={b.stars}
                 valorH={b.valorH}
                 shortDesc={b.shortDesc}
-                // onButtonClick={handleButtonClick}
               />
             )
           })

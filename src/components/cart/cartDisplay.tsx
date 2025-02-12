@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useStore from "@/app/store/cartStore";
+import useStore from '@/store/cartStore'
 import CartProduct from "./cartProduct";
 
 interface CartProps {
@@ -14,6 +14,7 @@ export default function CartDisplay(props: CartProps) {
     }
 
     const cart = useStore((state) => state.cart);
+    const getTotal = useStore((state) => state.getTotal());
 
     return (
         <div className={`h-full w-full z-10 bg-black-100/40 backdrop-blur-sm py-4 fixed inset-0 grid place-content-center ${!props.openCart ? 'hidden' : ''}`}>
@@ -31,7 +32,7 @@ export default function CartDisplay(props: CartProps) {
                             <ul>
                                 {cart.products.length > 0 ? (
                                     cart.products.map((p, i) => {
-                                        return <CartProduct id={p.id} product={p.product} qnt={p.qnt} />
+                                        return <CartProduct key={p.id} id={p.id} product={p.product} qnt={p.qnt} />
                                     })
                                     // <pre>
                                     //     {JSON.stringify(cart.products, null, 2)}
@@ -46,13 +47,7 @@ export default function CartDisplay(props: CartProps) {
                     <div>
                         <div className="mt-6 flex items-center justify-between">
                             <p className="text-sm font-medium text-gray-900">Total</p>
-                            <p className="text-2xl font-semibold text-gray-900"><span className="text-xs font-normal text-gray-400">USD</span> 408.00</p>
-                        </div>
-
-                        <div className="mt-6 text-center">
-                            <button type="button" className="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
-                                Checkout
-                            </button>
+                            <p className="text-2xl font-semibold text-gray-900"><span className="text-xs font-normal text-gray-400">BRL </span>{getTotal}</p>
                         </div>
                     </div>
                 </div>

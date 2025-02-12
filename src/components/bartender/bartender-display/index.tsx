@@ -9,6 +9,7 @@ type propsType = {
   valorH: number;
   stars: number;
   shortDesc: string;
+  image: string;
 }
 
 export default function Bartender(props: propsType) {
@@ -18,7 +19,7 @@ export default function Bartender(props: propsType) {
 
   return (
     <div key={props.id} className="bartender-container">
-      <Image src="https://picsum.photos/id/10/300/200" alt="Image Bartender" width={320} height={320} />
+      <Image src={props.image} alt="Image Bartender" width={320} height={320} />
       <h3>{props.name}</h3>
       <div className="bartender-star-price">
         <div className="bartanter-stars flex">

@@ -26,6 +26,7 @@ export default function BartenderPage({ params }: InfoParams) {
       id={drink.id}
       name={drink.name}
       valorH={drink.valorH}
+      image={drink.image}
       stars={drink.stars}
       shortDesc={drink.shortDesc}      
       description={drink.description} />

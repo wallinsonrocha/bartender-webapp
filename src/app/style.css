@@ -1,12 +1,13 @@
 #home{
     display: flex;
     flex-direction: column-reverse;
+    padding: 4rem;
     gap: 2rem;
     align-items: center;
     min-height: 100vh;
 
     a{
-        background-color: #c4c4c4;
+        background-color: #03949e;
         border-radius: 20px;
         padding: .6rem;
     }

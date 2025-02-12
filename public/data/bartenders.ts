@@ -3,6 +3,7 @@ export interface BartenderPerson {
   name: string;
   stars: number;
   valorH: number;
+  image: string;
   shortDesc: string;
   description: string;
   objective: string;
@@ -15,6 +16,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Carla', 
     stars: 5, 
     valorH: 150, 
+    image: "/images/bartenders/1.jpg",
     shortDesc: "Bartender experiente com mais de 10 anos de atuação.", 
     description: "Carla é uma bartender altamente qualificada, com vasta experiência em mixologia e um histórico comprovado de criar coquetéis inovadores. Sua dedicação à arte de bartending é evidente em cada bebida que prepara.", 
     objective: "Proporcionar uma experiência única e memorável através de coquetéis bem elaborados e um atendimento excepcional.", 
@@ -25,6 +27,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Daniel', 
     stars: 4, 
     valorH: 120, 
+    image: "/images/bartenders/2.jpg",
     shortDesc: "Especialista em coquetéis clássicos e modernos.", 
     description: "Daniel possui uma paixão por mixologia e tem a habilidade de criar tanto coquetéis clássicos quanto modernos com perfeição. Ele está sempre em busca de novas tendências para surpreender seus clientes.", 
     objective: "Criar coquetéis que não apenas satisfaçam, mas também encantem os clientes, oferecendo uma experiência de bar diferenciada.", 
@@ -35,6 +38,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Érick', 
     stars: 4, 
     valorH: 130, 
+    image: "/images/bartenders/3.jpg",
     shortDesc: "Mixologista com habilidades avançadas em decoração de drinks.", 
     description: "Érick é conhecido por suas habilidades excepcionais em decorar drinks, transformando cada coquetel em uma obra de arte. Sua atenção aos detalhes faz com que cada bebida seja visualmente impressionante.", 
     objective: "Impressionar os clientes com drinks que são tanto visualmente deslumbrantes quanto deliciosos.", 
@@ -45,6 +49,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Fernanda', 
     stars: 4, 
     valorH: 140, 
+    image: "/images/bartenders/4.jpg",
     shortDesc: "Bartender especializada em coquetéis tropicais.", 
     description: "Fernanda traz a energia e o sabor dos trópicos para cada drink que prepara. Seus coquetéis tropicais são famosos por serem refrescantes e deliciosos, perfeitos para qualquer ocasião.", 
     objective: "Levar o espírito tropical aos clientes através de coquetéis autênticos e saborosos.", 
@@ -55,6 +60,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Gabriel', 
     stars: 4, 
     valorH: 125, 
+    image: "/images/bartenders/5.jpg",
     shortDesc: "Perito em harmonização de coquetéis com comidas.", 
     description: "Gabriel é um bartender que entende a importância da harmonização entre comida e bebida. Ele possui um talento especial para criar coquetéis que complementam perfeitamente os pratos servidos.", 
     objective: "Oferecer uma experiência gastronômica completa, onde cada coquetel realça o sabor dos pratos servidos.", 
@@ -65,6 +71,7 @@ export const bartenderList: BartenderPerson[] = [
     name: 'Helena', 
     stars: 4, 
     valorH: 135, 
+    image: "/images/bartenders/6.jpg",
     shortDesc: "Especialista em coquetéis artesanais e destilados.", 
     description: "Helena é uma entusiasta de coquetéis artesanais e destilados. Ela tem um conhecimento profundo sobre diferentes tipos de bebidas espirituosas e como utilizá-las para criar coquetéis únicos.", 
     objective: "Criar coquetéis artesanais que destaquem a qualidade dos destilados utilizados.", 
