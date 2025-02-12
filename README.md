@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bartender
 
-## Getting Started
+**Bartender** é uma aplicação web inovadora que conecta amantes de drinks com bartenders profissionais. Desenvolvida com o objetivo de explorar funcionalidades avançadas do Next.js, esta plataforma permite que os usuários comprem bebidas e contratem serviços de bartenders de forma prática e intuitiva.
 
-First, run the development server:
+## Índice
+
+- [Bartender](#bartender)
+  - [Índice](#índice)
+  - [Objetivo](#objetivo)
+  - [Recursos](#recursos)
+  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Instalação](#instalação)
+    - [Pré-requisitos](#pré-requisitos)
+    - [Passos para Instalação](#passos-para-instalação)
+  - [Execução do Projeto](#execução-do-projeto)
+    - [Modo de Desenvolvimento](#modo-de-desenvolvimento)
+    - [Build e Produção](#build-e-produção)
+
+## Objetivo
+
+A aplicação **Bartender** é um mini-sistema onde os usuários podem:
+
+- **Comprar drinks**: Selecione bebidas para festas, eventos ou momentos de descontração.
+- **Contratar bartenders**: Encontre e contrate profissionais para coquetéis, eventos e mais.
+
+O objetivo é proporcionar uma experiência completa tanto para clientes que buscam bebidas de qualidade quanto para bartenders que desejam oferecer seus serviços.
+
+## Recursos
+
+- **Interface Intuitiva e Responsiva**: Desenvolvida com Tailwind CSS para garantir uma experiência agradável em qualquer dispositivo.
+- **Navegação Avançada com Next.js**: Utilização de Parallel Routes para a criação de modais e uma navegação dinâmica.
+- **Gerenciamento de Estado Eficiente**: Implementado com Zustand para um gerenciamento fluido do carrinho de compras.
+- **Type Safety**: Uso de TypeScript para garantir robustez e manutenção facilitada do código.
+
+## Tecnologias Utilizadas
+
+- **Next.js 14**: Framework React para renderização do lado do servidor e construção de aplicações escaláveis.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática e melhora a qualidade do código.
+- **Tailwind CSS**: Framework CSS utilitário para estilização rápida e responsiva.
+- **Zustand**: Biblioteca para gerenciamento de estados de forma simples e eficaz.
+- **Parallel Routes (Next.js)**: Para a implementação de modais e rotas paralelas, permitindo uma experiência de usuário dinâmica.
+
+## Instalação
+
+### Pré-requisitos
+
+- **Node.js** (versão 14 ou superior)
+- **npm** ou **yarn**
+
+### Passos para Instalação
+
+1. **Clone o Repositório**
+
+   ```bash
+   git clone git@github.com:wallinsonrocha/bartender-webapp.git
+   cd bartender-webapp
+   ```
+
+2. **Instale as Dependências**
+
+   Com **npm**:
+   ```bash
+   npm install
+   ```
+   Ou com **yarn**:
+   ```bash
+   yarn install
+   ```
+
+## Execução do Projeto
+
+### Modo de Desenvolvimento
+
+Para iniciar o projeto em modo de desenvolvimento:
 
 ```bash
 npm run dev
-# or
+```
+Ou com yarn:
+```bash
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse a aplicação através do endereço: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build e Produção
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Gerar Build de Produção**
 
-## Learn More
+   ```bash
+   npm run build
+   ```
+   Ou:
+   ```bash
+   yarn build
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Iniciar o Servidor em Modo de Produção**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm start
+   ```
+   Ou:
+   ```bash
+   yarn start
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
