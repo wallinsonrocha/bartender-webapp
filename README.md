@@ -2,20 +2,6 @@
 
 **Bartender** é uma aplicação web inovadora que conecta amantes de drinks com bartenders profissionais. Desenvolvida com o objetivo de explorar funcionalidades avançadas do Next.js, esta plataforma permite que os usuários comprem bebidas e contratem serviços de bartenders de forma prática e intuitiva.
 
-## Índice
-
-- [Bartender](#bartender)
-  - [Índice](#índice)
-  - [Objetivo](#objetivo)
-  - [Recursos](#recursos)
-  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-  - [Instalação](#instalação)
-    - [Pré-requisitos](#pré-requisitos)
-    - [Passos para Instalação](#passos-para-instalação)
-  - [Execução do Projeto](#execução-do-projeto)
-    - [Modo de Desenvolvimento](#modo-de-desenvolvimento)
-    - [Build e Produção](#build-e-produção)
-
 ## Objetivo
 
 A aplicação **Bartender** é um mini-sistema onde os usuários podem:
